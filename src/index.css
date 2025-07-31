@@ -1,0 +1,114 @@
+/* Base styles */
+body {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: cyan;
+  background-repeat: no-repeat;
+  color: #e47113;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.home_image {
+  background-image: url('images/online_auction.jpg');
+  max-width: 500px;
+  height: 400px;
+  margin-bottom: 0%;  
+}
+
+.hero-text {
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+
+/* Headings */
+h1, h2, h3 {
+  /* padding-top: 25%; */
+  color: #ec9e0c;
+  margin-bottom: 0.5rem;
+}
+
+.main {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Buttons */
+button {
+  margin: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #ec9e0c;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.head {
+  font-size: 50px;
+  color: #ec9e0c;
+  font-weight: 500;
+}
+
+.text1 {
+  font-size: 25px;
+  color: yellow;
+  font-weight: 500;
+}
+
+/* Input fields */
+input {
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+/* Cards / Items */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Utility */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 0.75rem; }
+.p-6 { padding: 1.5rem; }
+.rounded { border-radius: 0.5rem; }

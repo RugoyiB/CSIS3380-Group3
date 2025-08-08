@@ -27,12 +27,9 @@ export default function BidItems() {
       }));
 
       const sortedItems = items.sort((a, b) => {
-        // Sort by status: 'Open' items first
         if (a.status === "Open" && b.status !== "Open") return -1;
         if (a.status !== "Open" && b.status === "Open") return 1;
-
-        // If both are the same status, sort alphabetically by description
-        return a.description.localeCompare(b.description);
+        return a.auctionNumber - b.auctionNumber;
       });
 
       setAllItems(sortedItems);
@@ -89,23 +86,47 @@ export default function BidItems() {
           {displayedItems.map((item) => (
             <li
               key={item.id}
-              className={`p-2 mb-2 border rounded ${item.status === "Open" ? "bg-green-50" : "bg-gray-100"
+              className={`p-4 mb-4 border rounded flex items-start ${item.status === "Open" ? "bg-green-50" : "bg-gray-100"
                 }`}
             >
-              <div className="font-semibold text-lg">{item.description}</div>
-              <div>Status: <span className="text-sm italic">{item.status}</span></div>
-              {item.bids?.length > 0 && (
-                <div>
-                  <strong>Bids:</strong>
-                  <ul className="ml-4 list-disc">
-                    {item.bids.map((bid, i) => (
-                      <li key={i}>
-                        {bid.uid} bid <span className="font-bold">${bid.amount.toFixed(2)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <h3 className="text-gray-600 text-sm mb-1"><strong>Auction #: {item.auctionNumber}</strong></h3>
+              {item.imageUrl && (
+                <img
+                  src={item.imageUrl}
+                  alt={item.description}
+                  style={{ width: "300px", height: "300px", objectFit: "contain" }}
+                  className="rounded border mr2"
+                />
               )}
+              <div>
+
+                <div className="font-semibold text-lg">{item.description}</div>
+                <div>
+                  Status:{" "}
+                  <span className="text-sm italic">{item.status}</span>
+                </div>
+                {item.bids?.length > 0 && (
+                  <div>
+                    <strong>Bids:</strong>
+                    <ul className="ml-4 list-disc">
+                      {(() => {
+                        const highestBid = Math.max(...item.bids.map(b => b.amount));
+
+                        return item.bids.map((bid, i) => (
+                          <li key={i}>
+                            <span
+                              className={bid.amount === highestBid ? "highlight-bid" : ""}
+                            >
+                              {bid.uid} - ${bid.amount.toFixed(2)}
+                            </span>
+                          </li>
+                        ));
+                      })()}
+                    </ul>
+                  </div>
+                )}
+
+              </div>
             </li>
           ))}
         </ul>

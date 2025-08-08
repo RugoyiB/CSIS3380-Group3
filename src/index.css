@@ -18,7 +18,7 @@ body {
   background-image: url('images/online_auction.jpg');
   max-width: 500px;
   height: 400px;
-  margin-bottom: 0%;  
+  margin-bottom: 0%;
 }
 
 .hero-text {
@@ -30,12 +30,14 @@ body {
   transform: translate(-50%, -30%);
   text-align: center;
   color: white;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 
 /* Headings */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   /* padding-top: 25%; */
   color: #ec9e0c;
   margin-bottom: 0.5rem;
@@ -85,6 +87,22 @@ input:focus {
   border-color: #2563eb;
 }
 
+input.input-field1 {
+  border-color: #2563eb;
+  width: 350px;
+}
+
+input.input-field1:focus {
+  border-color: #2563eb;
+}
+
+.highlight-bid {
+  background-color: #fff9c4;
+  /* light yellow */
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
 /* Cards / Items */
 .card {
   background-color: #ffffff;
@@ -104,11 +122,34 @@ input:focus {
   color: #6b7280;
 }
 
-.mt-2 { margin-top: 0.5rem; }
-.mt-4 { margin-top: 1rem; }
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-4 { margin-bottom: 1rem; }
-.p-2 { padding: 0.5rem; }
-.p-3 { padding: 0.75rem; }
-.p-6 { padding: 1.5rem; }
-.rounded { border-radius: 0.5rem; }
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}

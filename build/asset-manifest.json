@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ab8b5c7b.css",
-    "main.js": "/static/js/main.110e5e69.js",
+    "main.css": "/static/css/main.baed1ed7.css",
+    "main.js": "/static/js/main.3bc8dd19.js",
     "static/media/online_auction.jpg": "/static/media/online_auction.1df23f387517f79d2fb7.jpg",
     "index.html": "/index.html",
-    "main.ab8b5c7b.css.map": "/static/css/main.ab8b5c7b.css.map",
-    "main.110e5e69.js.map": "/static/js/main.110e5e69.js.map"
+    "main.baed1ed7.css.map": "/static/css/main.baed1ed7.css.map",
+    "main.3bc8dd19.js.map": "/static/js/main.3bc8dd19.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab8b5c7b.css",
-    "static/js/main.110e5e69.js"
+    "static/css/main.baed1ed7.css",
+    "static/js/main.3bc8dd19.js"
   ]
 }

@@ -83,13 +83,8 @@ export default function AdminDashboard() {
       alert("Please fill in description, starting bid, and duration.");
       return;
     }
-
     const openItemsCount = items.filter(item => !item.closed).length;
-    if (openItemsCount < 5) {
-      alert("You must have at least 5 open auction items.");
-      return;
-    }
-
+    
     if (openItemsCount > 30) {
       alert("You cannot have more than 30 open auction items.");
       return;
@@ -162,6 +157,13 @@ export default function AdminDashboard() {
   };
 
   const handleDeleteItem = async (itemId) => {
+    const openItemsCount = items.filter(item => !item.closed).length;
+
+    if (openItemsCount <= 5) {
+      alert("You must have at least 5 open auction items.");
+      return;
+    }
+
     if (!window.confirm("Are you sure you want to delete this item?")) return;
     try {
       await deleteDoc(doc(db, "items", itemId));
@@ -174,6 +176,13 @@ export default function AdminDashboard() {
   const handleCloseAuction = async (item) => {
     if (!item.bids || item.bids.length === 0) {
       alert("No bids to close the auction with.");
+      return;
+    }
+
+    const openItemsCount = items.filter(i => !i.closed).length;
+
+    if (openItemsCount <= 5) {
+      alert("You must keep at least 5 auctions open.");
       return;
     }
 

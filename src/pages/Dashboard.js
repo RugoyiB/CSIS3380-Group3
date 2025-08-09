@@ -85,9 +85,13 @@ export default function AdminDashboard() {
     }
 
     const openItemsCount = items.filter(item => !item.closed).length;
+    if (openItemsCount < 5) {
+      alert("You must have at least 5 open auction items.");
+      return;
+    }
 
-    if (openItemsCount >= 5) {
-      alert("Only 5 auction items can be open at a time.");
+    if (openItemsCount > 30) {
+      alert("You cannot have more than 30 open auction items.");
       return;
     }
 

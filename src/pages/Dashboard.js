@@ -54,7 +54,7 @@ export default function AdminDashboard() {
       setNow(Date.now());
       for (const item of items) {
         if (!item.closed && item.endTime && item.endTime <= Date.now()) {
-          await handleCloseAuction(item);  // Auto-close and notify
+          //await handleCloseAuction(item); ///-----
         }
       }
     }, 1000);
@@ -122,7 +122,7 @@ export default function AdminDashboard() {
   const formatTimeRemaining = (endTime) => {
     const now = new Date().getTime();
     const diff = endTime - now;
-    if (diff <= 0) return "Time's up!";
+    if (diff <= 0) return "00h 00m 00s";
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const secs = Math.floor((diff % (1000 * 60)) / 1000);
@@ -282,7 +282,8 @@ export default function AdminDashboard() {
               </p>
             )}
 
-            {!item.closed && (
+
+            {!item.closed && item.endTime > now && (
               <div className="place-bid-form">
                 <input
                   type="number"
